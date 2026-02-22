@@ -4,8 +4,16 @@ A CLI tool for cloning git repositories into organized project folders with inte
 
 ## Install
 
+### From npm (Recommended)
+
 ```bash
-git clone <repository-url>
+npm install -g git-clone-select
+```
+
+### From source
+
+```bash
+git clone https://github.com/aikengunay/git-clone-select.git
 cd git-clone-select
 npm install -g .
 ```
