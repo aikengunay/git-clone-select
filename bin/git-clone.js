@@ -11,7 +11,7 @@ const readline = require('readline');
 // Configuration management
 function getConfigPath() {
   const homeDir = os.homedir();
-  const configDir = path.join(homeDir, '.config', 'git-clone');
+  const configDir = path.join(homeDir, '.config', 'git-clone-select');
   const configFile = path.join(configDir, 'config.json');
   return { configDir, configFile };
 }
@@ -78,7 +78,7 @@ function saveConfig(projectsDir) {
 async function setupConfig() {
   const defaultDir = getDefaultProjectsDir();
   
-  log('\nWelcome to git-clone!', 'info');
+  log('\nWelcome to git-clone-select!', 'info');
   log('Let\'s set up your projects directory.', 'info');
   
   const { projectsDir } = await inquirer.prompt([
@@ -349,7 +349,7 @@ function showConfig() {
       log('Note: Using GIT_CLONE_PROJECTS_DIR environment variable', 'warning');
     }
   } else {
-    log('No configuration found. Run git-clone to set up.', 'warning');
+    log('No configuration found. Run git-clone-select to set up.', 'warning');
   }
 }
 
@@ -396,14 +396,14 @@ function showVersion() {
   try {
     const packageJsonPath = path.join(__dirname, '..', 'package.json');
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    log(`git-clone v${packageJson.version}`, 'info');
+    log(`git-clone-select v${packageJson.version}`, 'info');
   } catch (err) {
-    log('git-clone (version unknown)', 'info');
+    log('git-clone-select (version unknown)', 'info');
   }
 }
 
 function showHelp() {
-  log('\nUsage: git-clone [options] <git-url>', 'info');
+  log('\nUsage: git-clone-select [options] <git-url>', 'info');
   log('\nOptions:', 'info');
   log('  -c, --config              Show current configuration', 'info');
   log('  --set-config <path>       Set projects directory', 'info');
@@ -411,9 +411,9 @@ function showHelp() {
   log('  -v, --version             Show version number', 'info');
   log('  -h, --help                Show this help message', 'info');
   log('\nExamples:', 'info');
-  log('  git-clone https://github.com/user/repo.git', 'info');
-  log('  git-clone --config', 'info');
-  log('  git-clone --set-config ~/MyProjects', 'info');
+  log('  git-clone-select https://github.com/user/repo.git', 'info');
+  log('  git-clone-select --config', 'info');
+  log('  git-clone-select --set-config ~/MyProjects', 'info');
 }
 
 async function main() {
@@ -438,7 +438,7 @@ async function main() {
   
   if (args[0] === '--set-config') {
     if (!args[1]) {
-      error('Usage: git-clone --set-config <path>');
+      error('Usage: git-clone-select --set-config <path>');
     }
     await setConfig(args[1]);
     process.exit(0);
@@ -454,7 +454,7 @@ async function main() {
         error(`Failed to reset config: ${err.message}`);
       }
     }
-    log('Run git-clone to set up configuration.', 'info');
+    log('Run git-clone-select to set up configuration.', 'info');
     process.exit(0);
   }
   
@@ -497,7 +497,7 @@ async function main() {
   const gitUrl = args[0];
 
   if (!gitUrl) {
-    error('Usage: git-clone <git-url>\nExample: git-clone https://github.com/user/repo.git');
+    error('Usage: git-clone-select <git-url>\nExample: git-clone-select https://github.com/user/repo.git');
   }
 
   if (!validateGitUrl(gitUrl)) {
