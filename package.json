@@ -4,7 +4,7 @@
   "description": "A global npm package to easily clone git repositories into your Projects folder",
   "main": "index.js",
   "bin": {
-    "git-clone-select": "./bin/git-clone.js"
+    "git-clone-select": "./bin/git-clone-select.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
