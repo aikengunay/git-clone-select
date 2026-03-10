@@ -1,6 +1,6 @@
 {
   "name": "git-clone-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A global npm package to easily clone git repositories into your Projects folder",
   "main": "index.js",
   "bin": {
