@@ -6,6 +6,27 @@ A CLI tool for cloning git repositories into organized project folders with inte
 
 ### From npm (Recommended)
 
+**Linux users (one-time setup):**
+
+If you get permission errors, configure npm once:
+
+```bash
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Then install normally:
+
+```bash
+npm install -g git-clone-select
+```
+
+**macOS/Windows users:**
+
+Install directly:
+
 ```bash
 npm install -g git-clone-select
 ```
@@ -19,6 +40,8 @@ npm install -g .
 ```
 
 The `-g` flag installs the package globally, making `git-clone-select` available from any directory in your terminal.
+
+**Note:** After the one-time setup on Linux, you can use `npm install -g` for any package without sudo or permission issues.
 
 ## Usage
 
