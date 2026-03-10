@@ -6,6 +6,10 @@ A CLI tool for cloning git repositories into organized project folders with inte
 
 ### From npm (Recommended)
 
+```bash
+npm install -g git-clone-select
+```
+
 **Linux users (one-time setup):**
 
 If you get permission errors, configure npm once:
@@ -17,21 +21,11 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Then install normally:
-
-```bash
-npm install -g git-clone-select
-```
-
-**macOS/Windows users:**
-
-Install directly:
-
-```bash
-npm install -g git-clone-select
-```
+After this one-time setup, you can use `npm install -g` for any package without sudo or permission issues.
 
 ### From source
+
+For development or to install from source:
 
 ```bash
 git clone https://github.com/aikengunay/git-clone-select.git
@@ -40,8 +34,6 @@ npm install -g .
 ```
 
 The `-g` flag installs the package globally, making `git-clone-select` available from any directory in your terminal.
-
-**Note:** After the one-time setup on Linux, you can use `npm install -g` for any package without sudo or permission issues.
 
 ## Usage
 
@@ -110,17 +102,41 @@ git-clone-select https://github.com/user/repo.git
 
 Config file location: `~/.config/git-clone-select/config.json`
 
+## Requirements
+
+- Node.js 14 or higher
+- Git
+- npm
+
+## Platform Support
+
+### Windows
+
+Full support via Git for Windows
+
+### macOS
+
+Full support
+
+### Linux
+
+Full support (for npm global installs, configure npm prefix to avoid permission errors - see Install section)
+
 ## Uninstall
 
 ```bash
 npm uninstall -g git-clone-select
 ```
 
-## Requirements
+## Contributing
 
-- Node.js
-- Git
-- npm
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
